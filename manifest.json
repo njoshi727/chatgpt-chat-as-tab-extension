@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "ChatGPT Tab Extension",
+  "version": "1.0.0",
+  "description": "A Chrome extension for managing ChatGPT chats in tab format.",
+  "background": {
+    "service_worker": "background/background.js"
+  },
+  "permissions": [
+    "storage"
+  ],
+  "host_permissions": [
+    "https://chatgpt.com/c/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["https://chatgpt.com/*"],
+      "js": ["scripts/content.js"]
+    }
+  ]
+}
